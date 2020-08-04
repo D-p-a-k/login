@@ -1,0 +1,99 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOGIN</title>
+
+<style>
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.container {
+  padding: 16px;
+width:500px;
+ background-color: #f2f2f2;
+margin:0 auto;
+box-shadow: 10px 10px 5px grey;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+console.log(value);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+
+function get(){
+  var username = getCookie("username");
+  if (username == "susmi") {
+console.log(username);
+   window.location = "welcome.html";
+  }
+}
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+if ( username == "susmi" && password == "susmi123"){
+ if(document.getElementById("check").checked== true)
+  {
+console.log("cookie set");
+document.cookie = "username=susmi;";
+}
+alert ("Login successful");
+window.location = "welcome.html"; // Redirecting to other page.
+return false;
+}
+else
+{
+alert("Invalid credentials");
+}
+}
+    </script>
+</head>
+
+<body onload="get()">
+        
+
+
+
+
+<div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" id="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="password" name="psw" required>
+        
+      <button type="submit" onclick="validate()">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" id="check"> Remember me
+      </label>
+
+      
+    </div>
+
+</body>
+</html>

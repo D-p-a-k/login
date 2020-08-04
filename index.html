@@ -49,9 +49,10 @@ console.log(value);
 
 function get(){
   var username = getCookie("username");
-console.log(username);
+
 var decrypted = CryptoJS.AES.decrypt(username, "Secret Passphrase");
 var dec=decrypted.toString(CryptoJS.enc.Utf8);
+  console.log(dec);
   if (dec=="susmi") {
 
   // window.location = "welcome.html";

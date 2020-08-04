@@ -60,7 +60,7 @@ if ( username == "susmi" && password == "susmi123"){
  if(document.getElementById("check").checked== true)
   {
 console.log("cookie set");
-document.cookie = "username=susmi;";
+document.cookie = "username=susmi; max-age=24*3600;";
 }
 alert ("Login successful");
 window.location = "welcome.html"; // Redirecting to other page.

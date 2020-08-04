@@ -52,10 +52,10 @@ function get(){
 
 var decrypted = CryptoJS.AES.decrypt(username, "Secret Passphrase");
 var dec=decrypted.toString(CryptoJS.enc.Utf8);
-  console.log(dec);
+ 
   if (dec=="susmi") {
-
-  // window.location = "welcome.html";
+ console.log(dec);
+  window.location = "welcome.html";
   }
 }
 function validate(){
